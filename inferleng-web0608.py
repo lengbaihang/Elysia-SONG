@@ -134,9 +134,9 @@ else:
 gpus = "-".join([i[0] for i in gpu_infos])
 
 
-weight_root = os.getenv("weight_root")
-weight_uvr5_root = os.getenv("weight_uvr5_root")
-index_root = os.getenv("index_root")
+weight_root = "assets/weights"
+weight_uvr5_root = "assets/uvr5_weights"
+index_root = "assets\indices"
 outside_index_root = os.getenv("outside_index_root")
 
 names = []
@@ -155,7 +155,7 @@ def lookup_indices(index_root):
 
 
 lookup_indices(index_root)
-lookup_indices(outside_index_root)
+#lookup_indices(outside_index_root)
 uvr5_names = []
 for name in os.listdir(weight_uvr5_root):
     if name.endswith(".pth") or "onnx" in name:
